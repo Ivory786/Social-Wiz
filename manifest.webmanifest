@@ -1,0 +1,20 @@
+{
+  "name": "Social Wiz \u2014 Joshua Sardinas",
+  "short_name": "Social Wiz",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#6BD1FF",
+  "theme_color": "#6BD1FF",
+  "icons": [
+    {
+      "src": "favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}

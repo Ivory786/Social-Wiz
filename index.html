@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Wiz — Joshua Sardinas</title>
+  <meta name="description" content="Production • Editing • Publishing. Short‑form that actually converts. Miami & Remote." />
+  <meta name="theme-color" content="#6BD1FF">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <style>
+    :root{
+      --sw-sky:#6BD1FF;   /* brand light blue */
+      --sw-sky-2:#BFEAFF; /* gradient mate */
+      --sw-navy:#0F2743;  /* deep navy */
+      --sw-ink:#0B1A2B;   /* darker text/navy */
+      --sw-orange:#F97316;/* crystal orange */
+      --fg:#eef7ff;       /* light text */
+      --muted:#b7d7ee;
+      --line:rgba(255,255,255,.15);
+      --card:rgba(255,255,255,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--sw-sky),var(--sw-sky-2) 60%,#E9F7FF);color:#0b1a2b}
+    a{text-decoration:none;color:inherit}
+    img,video{max-width:100%;display:block}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.6);backdrop-filter:blur(4px);color:var(--sw-ink);font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,var(--sw-navy),var(--sw-orange));color:#fff;border:none}
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,26,43,.68),rgba(11,26,43,.25) 70%,transparent);backdrop-filter:blur(8px)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800}
+    .brand img{width:34px;height:34px}
+    .nav-list{display:flex;gap:16px}
+    .nav-list a{color:#eaf6ff;opacity:.95}
+    /* HERO */
+    header.hero{min-height:92vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}
+    header.hero .inner{padding:64px 0}
+    .hero-logo{width:min(540px,78vw);height:auto;margin:0 auto 16px;filter:drop-shadow(0 10px 28px rgba(15,39,67,.35))}
+    h1{font-family:Poppins,Inter,sans-serif;font-size:clamp(2.2rem,6vw,4rem);margin:0;color:#0B1A2B}
+    .tagline{display:inline-flex;gap:14px;align-items:center;margin:10px auto 0;background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.8);padding:8px 14px;border-radius:999px;font-weight:700;color:#0B1A2B}
+    .cta-row{margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    /* MARQUEE STYLE */
+    .marquee{margin-top:28px;color:#0B1A2B;opacity:.85;font-weight:700}
+    .marquee span{padding:0 .75rem}
+    /* SPLIT BANNER (Case Studies / Portfolio) */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+    .split a{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);}
+    .split .panel video, .split .panel img{width:100%;height:300px;object-fit:cover;filter:grayscale(.1) contrast(1.05) brightness(.9)}
+    .split .label{position:absolute;inset:auto 0 16px 16px;color:#fff;font-weight:800;font-size:clamp(1.2rem,2.6vw,2rem);text-shadow:0 2px 18px rgba(0,0,0,.45);letter-spacing:.02em}
+    .split .label .sub{font-weight:600;opacity:.9}
+    @media (max-width:860px){.split{grid-template-columns:1fr} .split .panel video,.split .panel img{height:240px}}
+    /* SECTIONS */
+    section{padding:64px 0}
+    h2{font-family:Poppins,Inter,sans-serif;font-size:clamp(1.8rem,3.4vw,2.4rem);margin:0 0 12px;color:#0B1A2B}
+    .sub{opacity:.85;margin:0 0 22px}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){.grid.cols-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 640px){.grid.cols-3{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+    .card .body{padding:16px;color:#0B1A2B}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{border:1px solid var(--line);padding:.3rem .55rem;border-radius:999px;background:rgba(255,255,255,.55);font-weight:600}
+    /* ABOUT two column */
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    @media (max-width:860px){.two{grid-template-columns:1fr}}
+    /* FOOTER */
+    footer{border-top:1px solid var(--line);padding:26px 0 60px;color:#0B1A2B;opacity:.9}
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(14px);transition:all .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <img src="favicon-64.png" alt="SW">
+        <span>Social Wiz</span>
+      </div>
+      <nav class="nav-list">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="inner container">
+      <img class="hero-logo" src="logo.png" srcset="logo@2x.png 2x" alt="Social Wiz logo">
+      <h1>Joshua Sardinas</h1>
+      <div class="tagline">Production • Editing • Publishing</div>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">Start a project</a>
+        <a class="btn" href="#work">See work</a>
+      </div>
+
+      <!-- Marquee text -->
+      <p class="marquee">Short‑form that actually converts <span>•</span> Miami & Remote <span>•</span> 3–5 day turnaround</p>
+
+      <!-- Split banner like the reference -->
+      <div class="split">
+        <a class="panel" href="#cases">
+          <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop">
+            <source src="assets/case-studies.mp4" type="video/mp4">
+          </video>
+          <div class="label"><span class="sub">READ THE</span><br>CASE STUDIES →</div>
+        </a>
+        <a class="panel" href="#work">
+          <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1600&auto=format&fit=crop">
+            <source src="assets/portfolio.mp4" type="video/mp4">
+          </video>
+          <div class="label"><span class="sub">SEE THE</span><br>PORTFOLIO →</div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CASES -->
+  <section id="cases" class="container">
+    <h2>Case Studies</h2>
+    <p class="sub">A peek into the process and results behind a few projects.</p>
+    <div class="grid cols-3">
+      <article class="card reveal">
+        <img src="https://images.unsplash.com/photo-1552152974-19b9caf9612e?q=80&w=1200&auto=format&fit=crop" alt="Education content">
+        <div class="body">
+          <h3>Test Hacks — ISEE Edition</h3>
+          <p>60+ shorts across TikTok/Reels/Shorts with strong hook frameworks and clear CTAs.</p>
+          <div class="chips"><span class="chip">Script</span><span class="chip">Edit</span><span class="chip">Publish</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop" alt="Podcast workflow">
+        <div class="body">
+          <h3>Podcast Workflow</h3>
+          <p>Two‑mic Rode + GoPro setup; Sunday batch recording; same‑week clips; weekly analytics.</p>
+          <div class="chips"><span class="chip">Audio</span><span class="chip">Batching</span><span class="chip">Shorts</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" alt="Local ad">
+        <div class="body">
+          <h3>Local SMB Sizzle</h3>
+          <p>UGC‑style ads with on‑camera coaching and reporting on view‑through and click‑outs.</p>
+          <div class="chips"><span class="chip">UGC</span><span class="chip">Coaching</span><span class="chip">Reporting</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container">
+    <div class="two">
+      <div class="reveal">
+        <h2>About</h2>
+        <p class="sub">I’m Joshua Sardinas, a Miami‑based producer & editor focused on growth content.</p>
+        <p>I build simple, repeatable content systems for founders. Clear hooks, clean captions, snappy pacing, platform‑native cuts — and a monthly report to see what’s actually working.</p>
+        <div class="chips"><span class="chip">Remote & On‑site</span><span class="chip">3–5 day turnarounds</span></div>
+      </div>
+      <div class="reveal">
+        <img style="border-radius:16px;border:1px solid var(--line)" src="https://images.unsplash.com/photo-1542773998-9325b647a0b3?q=80&w=1200&auto=format&fit=crop" alt="Behind the camera">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="container">
+    <h2>Services</h2>
+    <div class="grid cols-3">
+      <div class="card reveal">
+        <div class="body">
+          <h3>Content Engine (Monthly)</h3>
+          <p>10–20 shorts/month • Editing + captions • Cross‑posting (TikTok/IG/YouTube) • KPI report.</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="body">
+          <h3>Production Day</h3>
+          <p>Half‑day or full‑day filming in Miami • Lighting & audio • On‑camera coaching • Same‑week edit.</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="body">
+          <h3>One‑Page Website</h3>
+          <p>Clean landing (like this) on GitHub Pages or Netlify • Custom domain optional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <p class="sub">I usually respond within a day.</p>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:20px">
+      <div class="card">
+        <div class="body">
+          <h3>Email</h3>
+          <p><a class="btn" href="mailto:hello@example.com">hello@example.com</a></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="body">
+          <h3>Book a Call</h3>
+          <p><a class="btn primary" href="https://calendly.com/" target="_blank" rel="noopener">Open Calendly</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p>© <span id="year"></span> Joshua Sardinas · Miami, FL — "Who Tutors? We do — thanks for asking."</p>
+      <div style="display:flex;gap:12px">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TT</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); } })
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Register service worker for PWA (optional)
+    if('serviceWorker' in navigator){ navigator.serviceWorker.register('./sw.js').catch(()=>{}); }
+  </script>
+</body>
+</html>
