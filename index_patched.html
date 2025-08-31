@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Wiz — Joshua Sardinas</title>
+  <meta name="description" content="Production • Editing • Publishing. Short‑form that actually converts. Miami & Remote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <style>
+    :root{
+      --sw-sky:#6BD1FF;
+      --sw-sky-2:#BFEAFF;
+      --sw-navy:#0F2743;
+      --sw-ink:#0B1A2B;
+      --sw-accent:#F97316;
+      --fg:#eef7ff;
+      --muted:#b7d7ee;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.14);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--sw-sky),var(--sw-sky-2) 60%,#E9F7FF);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:#e8f6ff;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(11,26,43,.65),rgba(11,26,43,.25) 60%,transparent);backdrop-filter:saturate(1.2) blur(8px)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:.7rem;font-weight:800;color:var(--sw-ink)}
+    .nav-list{display:flex;gap:16px}
+    .btn{padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06)}
+    .btn.primary{border:none;background:linear-gradient(90deg,var(--sw-navy),var(--sw-accent));color:#fff}
+    .hero{min-height:92vh;display:grid;place-items:center;text-align:center}
+    .hero .inner{padding:56px 0}
+    .hero-logo{width:min(560px,78vw);height:auto;margin:0 auto 18px;filter:drop-shadow(0 8px 28px rgba(15,39,67,.35))}
+    h1{font-size:clamp(2rem,5.6vw,3.4rem);line-height:1.05;margin:.3rem 0 4px;font-weight:800;color:var(--sw-ink)}
+    .role-line{display:inline-flex;gap:14px;align-items:center;color:var(--sw-ink);background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);padding:.5rem .9rem;border-radius:999px;font-weight:600}
+    section{padding:64px 0}
+    h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin:0 0 12px;color:var(--sw-ink)}
+    .sub{color:var(--sw-ink);opacity:.8;margin:0 0 24px}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){.grid.cols-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 640px){.grid.cols-3{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-height:100%}
+    .card .body{padding:16px}
+    .kicker{color:var(--muted);font-size:.85rem;margin:0}
+    .title{margin:6px 0 10px;font-weight:800;color:#fff}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{border:1px solid var(--line);padding:.3rem .55rem;border-radius:999px;color:#e9f6ff;font-size:.85rem;background:rgba(255,255,255,.06)}
+    .card img{aspect-ratio:16/10;object-fit:cover}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    @media (max-width:860px){.two{grid-template-columns:1fr}}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;background:rgba(15,39,67,.2);border:1px solid rgba(15,39,67,.35);padding:.35rem .6rem;border-radius:999px;color:#0b1a2b}
+    footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--sw-ink)}
+    .social{display:flex;gap:12px}
+    .small{font-size:.92rem;opacity:.9}
+    .reveal{opacity:0;transform:translateY(12px);transition:all .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Social Wiz</a>
+      <nav class="nav-list">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn primary" href="#contact">Book a consult</a>
+      </nav>
+    </div>
+  </div>
+  <header id="top" class="hero">
+    <div class="inner container">
+      <img class="hero-logo" src="logo.png" srcset="logo@2x.png 2x" alt="Social Wiz Logo" />
+      <h1>Joshua Sardinas</h1>
+      <p class="role-line">Production • Editing • Publishing</p>
+      <p style="margin:14px 0 0;color:var(--sw-ink);opacity:.85">Short‑form that actually converts. Miami & Remote.</p>
+      <p style="margin:18px 0 0">
+        <a class="btn primary" href="#contact">Start a project</a>
+        <a class="btn" href="#work">See work</a>
+      </p>
+    </div>
+  </header>
+  <!-- The rest of the page structure remains unchanged --> 
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p class="small">© <span id="year"></span> Joshua Sardinas · Miami, FL — "Who Tutors? We do — thanks for asking."</p>
+      <div class="social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TT</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show')}})
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
